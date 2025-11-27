@@ -13,6 +13,18 @@ final class HomeController extends AbstractController
     {
         return $this->render('home/index.html.twig', [
            "page_title" =>  "Wellcome",
+           "user" => (object)[
+                "name" => "",
+                "isLoggedIn" => true
+            ]
+        ]);
+    }
+
+    #[Route('/home2', name: 'app_home2')]
+    public function index2(): Response
+    {
+        return $this->render('home/index2.html.twig', [
+           "page_title" =>  "Wellcome",
            "user" => (object)["name" => "", "isLoggedIn" => true]
         ]);
     }
