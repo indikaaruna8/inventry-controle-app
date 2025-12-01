@@ -681,11 +681,6 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         enabled?: bool, // Default: false
  *     },
  * }
- * @psalm-type MakerConfig = array{
- *     root_namespace?: scalar|null, // Default: "App"
- *     generate_final_classes?: bool, // Default: true
- *     generate_final_entities?: bool, // Default: false
- * }
  * @psalm-type TwigConfig = array{
  *     form_themes?: list<scalar|null>,
  *     globals?: array<string, array{ // Default: []
@@ -944,6 +939,11 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *     script_attributes?: array<string, scalar|null>,
  *     link_attributes?: array<string, scalar|null>,
  * }
+ * @psalm-type MakerConfig = array{
+ *     root_namespace?: scalar|null, // Default: "App"
+ *     generate_final_classes?: bool, // Default: true
+ *     generate_final_entities?: bool, // Default: false
+ * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -958,12 +958,12 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         parameters?: ParametersConfig,
  *         services?: ServicesConfig,
  *         framework?: FrameworkConfig,
- *         maker?: MakerConfig,
  *         twig?: TwigConfig,
  *         web_profiler?: WebProfilerConfig,
  *         doctrine?: DoctrineConfig,
  *         doctrine_migrations?: DoctrineMigrationsConfig,
  *         webpack_encore?: WebpackEncoreConfig,
+ *         maker?: MakerConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
