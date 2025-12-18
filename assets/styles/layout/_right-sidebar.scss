@@ -1,0 +1,38 @@
+// Right Sidebar Styles
+#right-sidebar {
+    position: fixed;
+    top: $header-height;
+    right: -$right-sidebar-width;
+    width: $right-sidebar-width;
+    height: calc(100vh - #{$header-height});
+    background: #fff;
+    z-index: $z-index-sidebar - 10;
+    transition: right $transition-speed ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+
+    &.open {
+        right: 0;
+    }
+
+    .sidebar-content {
+        padding: 1.5rem;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        width: 280px;
+    }
+}
+
+// Main content adjustment when right sidebar is open
+body {
+    transition: padding-right $transition-speed ease;
+    
+    .right-sidebar-open & {
+        padding-right: $right-sidebar-width;
+        
+        @media (max-width: $mobile-breakpoint) {
+            padding-right: 280px;
+        }
+    }
+}

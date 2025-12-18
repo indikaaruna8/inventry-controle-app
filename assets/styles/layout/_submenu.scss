@@ -1,0 +1,44 @@
+// Submenu Styles
+.nav-item {
+    position: relative;
+    
+    &.open {
+        > .nav-link {
+            .dropdown-icon {
+                transform: rotate(180deg);
+            }
+        }
+        
+        > .nav-collapse {
+            display: block;
+        }
+    }
+}
+
+.nav-link[data-bs-toggle="collapse"] {
+    cursor: pointer;
+    position: relative;
+    
+    .dropdown-icon {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform $transition-speed ease;
+    }
+}
+
+.nav-collapse {
+    display: none;
+    padding-left: 1.5rem;
+    background: rgba(0, 0, 0, 0.02);
+    
+    .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        
+        &:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+    }
+}
